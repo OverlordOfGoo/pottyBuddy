@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
+// SearchScreen is a placeholder for the search feature
 export default function SearchScreen() {
   return (
     <View style={styles.container}>
@@ -9,6 +10,7 @@ export default function SearchScreen() {
   );
 }
 
+// Styles for the SearchScreen component
 const styles = StyleSheet.create({
   container: {
     flex: 1,

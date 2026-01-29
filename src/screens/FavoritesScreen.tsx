@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
+// FavoritesScreen is a placeholder for the favorites feature
 export default function FavoritesScreen() {
   return (
     <View style={styles.container}>
@@ -9,6 +10,7 @@ export default function FavoritesScreen() {
   );
 }
 
+// Styles for the FavoritesScreen component
 const styles = StyleSheet.create({
   container: {
     flex: 1,

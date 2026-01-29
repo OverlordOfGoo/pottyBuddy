@@ -7,10 +7,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 // import navigators and screens, for bottom tabs
-import TabNavigator from './TabNavigator';
+import TabNavigator from './TabNavigator.tsx';
 
 // import restroom detail screen
-import RestroomDetailScreen from '../screens/RestroomDetailScreen';
+import RestroomDetailScreen from '../screens/RestroomDetailScreen.tsx';
 
 // create stack navigator. 
 // RootStackParamList defines the types for the routes in this navigator.

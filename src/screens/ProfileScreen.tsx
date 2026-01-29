@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
+// ProfileScreen is a placeholder for the profile feature
 export default function ProfileScreen() {
   return (
     <View style={styles.container}>
@@ -9,6 +10,7 @@ export default function ProfileScreen() {
   );
 }
 
+// Styles for the ProfileScreen component
 const styles = StyleSheet.create({
   container: {
     flex: 1,
