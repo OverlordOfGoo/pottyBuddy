@@ -1,33 +1,54 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
+import { useRoute } from '@react-navigation/native';
+import { RouteProp } from '@react-navigation/native';
 import AppText from '../components/AppText';
 import AppButton from '../components/AppButton';
 import Card from '../components/Card';
 import { theme } from '../theme/theme';
+import { useRestrooms } from '../context/RestroomContext';
+import { RootStackParamList } from '../navigation/RootNavigator';
 
 // RestroomDetailScreen displays details about a specific restroom
 //  A screen showing ratings, amenities, and action buttons for a restroom
 export default function RestroomDetailScreen() {
+  const route = useRoute<RouteProp<RootStackParamList, 'RestroomDetail'>>();
+  const { restroomId } = route.params;
+  const { state } = useRestrooms();
+
+  const restroom = state.restrooms.find(r => r.id === restroomId);
+
+  if (!restroom) {
+    return (
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <AppText variant="h1">Restroom</AppText>
+          <AppText muted>Restroom not found</AppText>
+        </View>
+      </View>
+    );
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <AppText variant="h1">Restroom</AppText>
-        <AppText muted>Downtown Public Restroom</AppText>
+        <AppText muted>{restroom.name}</AppText>
       </View>
 
       <View style={styles.body}>
         <Card>
           <AppText variant="h2">Ratings</AppText>
           <AppText muted style={{ marginTop: theme.spacing.sm }}>
-            ⭐ 4.6 • Cleanliness 4.8 • Safety 4.4
+            ⭐ {restroom.rating} • Cleanliness {restroom.cleanliness} • Safety {restroom.safety}
           </AppText>
         </Card>
 
         <Card>
           <AppText variant="h2">Amenities</AppText>
-          <AppText muted style={styles.item}>• Wheelchair Accessible</AppText>
-          <AppText muted style={styles.item}>• Changing Table</AppText>
-          <AppText muted style={styles.item}>• Open Now</AppText>
+          <AppText muted style={styles.item}>• {restroom.isAccessible ? 'Wheelchair Accessible' : 'Not Wheelchair Accessible'}</AppText>
+          <AppText muted style={styles.item}>• {restroom.hasChangingTable ? 'Changing Table' : 'No Changing Table'}</AppText>
+          <AppText muted style={styles.item}>• {restroom.isOpen ? 'Open Now' : 'Closed'}</AppText>
         </Card>
 
         <View style={styles.row}>
