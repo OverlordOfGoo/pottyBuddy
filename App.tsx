@@ -8,3 +8,4 @@ export default function App() {
 //RootNavigator contains the NavigationContainer +Stack + Tabs
   return <RootNavigator />;
 }
+

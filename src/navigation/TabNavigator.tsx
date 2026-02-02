@@ -42,7 +42,6 @@ export default function TabNavigator() {
             headerTitleAlign: 'center',
         })}
     >
-        //define each tab screen
         <Tab.Screen name="Map" component={MapScreen} />
         <Tab.Screen name="Search" component={SearchScreen} />
         <Tab.Screen name="Favorites" component={FavoritesScreen} />
