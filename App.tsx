@@ -1,16 +1,15 @@
-//entry point
-
-//render top level navigator
 import React from 'react';
-import RootNavigator from './src/navigation/RootNavigator';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { RestroomProvider } from './src/context/RestroomContext';
+import MapScreen from './src/screens/MapScreen';
 
 export default function App() {
-//RootNavigator contains the NavigationContainer +Stack + Tabs
   return (
-    <RestroomProvider>
-      <RootNavigator />
-    </RestroomProvider>
+    <SafeAreaProvider>
+      <RestroomProvider>
+        <MapScreen />
+      </RestroomProvider>
+    </SafeAreaProvider>
   );
 }
 

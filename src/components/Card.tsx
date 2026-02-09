@@ -1,9 +1,7 @@
 import React from 'react';
-import { View, ViewProps, StyleSheet } from 'react-native';
+import { StyleSheet, View, ViewProps } from 'react-native';
 import { theme } from '../theme/theme';
 
-// Card component definition
-//  A reusable card component with consistent styling
 export default function Card({ style, ...props }: ViewProps) {
   return <View {...props} style={[styles.card, style]} />;
 }
@@ -15,5 +13,10 @@ const styles = StyleSheet.create({
     borderColor: theme.colors.border,
     borderRadius: theme.radius.lg,
     padding: theme.spacing.md,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.08,
+    shadowRadius: 6,
+    elevation: 2,
   },
 });

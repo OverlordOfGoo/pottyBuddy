@@ -15,7 +15,6 @@ export default function AppText({
   style,
   ...props
 }: Props) {
-  // ✅ Safe fallback: if variant is ever missing, we use body
   const variantStyle = theme.type[variant] ?? theme.type.body;
 
   return (
@@ -29,3 +28,4 @@ export default function AppText({
     />
   );
 }
+
