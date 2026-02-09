@@ -1,0 +1,31 @@
+{
+  "expo": {
+    "name": "Potty Buddy",
+    "slug": "pottybuddy",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "backgroundColor": "#F5F5F7"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow Potty Buddy to access your photos so you can upload restroom review pictures."
+        }
+      ]
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.overlordofgoo.pottybuddy",
+      "adaptiveIcon": {
+        "backgroundColor": "#F5F5F7"
+      }
+    }
+  }
+
+}
